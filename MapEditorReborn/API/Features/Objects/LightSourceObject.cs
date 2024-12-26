@@ -114,6 +114,7 @@ namespace MapEditorReborn.API.Features.Objects
                 Light.Intensity = Base.Intensity;
                 Light.Range = Base.Range;
                 Light.Base.NetworkShadowType = Base.Shadows ? LightShadows.Soft : LightShadows.None;
+                Light.Base.LightType = GetLightTypeFromString(Base.LightType);
             }
             else
             {
@@ -121,6 +122,7 @@ namespace MapEditorReborn.API.Features.Objects
                 Light.Base.LightIntensity = Base.Intensity;
                 Light.Base.LightRange = Base.Range;
                 Light.Base.ShadowType = Base.Shadows ? LightShadows.Soft : LightShadows.None;
+                Light.Base.LightType = GetLightTypeFromString(Base.LightType);
             }
 
             UpdateTransformProperties();

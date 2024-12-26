@@ -35,6 +35,7 @@ namespace MapEditorReborn.API.Features.Serializable
             Intensity = float.Parse(block.Properties["Intensity"].ToString());
             Range = float.Parse(block.Properties["Range"].ToString());
             Shadows = bool.Parse(block.Properties["Shadows"].ToString());
+            LightType = block.Properties["Type"].ToString();
         }
 
         /// <summary>
@@ -56,6 +57,8 @@ namespace MapEditorReborn.API.Features.Serializable
         /// Gets or sets a value indicating whether the <see cref="LightSourceSerializable"/>'s shadows are enabled.
         /// </summary>
         public bool Shadows { get; set; } = true;
+
+        public string LightType { get; set; } = "point";
 
         [YamlIgnore] public override Vector3 Rotation { get; set; }
 

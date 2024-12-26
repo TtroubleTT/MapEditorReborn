@@ -246,6 +246,16 @@ namespace MapEditorReborn.API.Features.Objects
             return ColorUtility.TryParseHtmlString(colorText, out color) ? color : Color.magenta * 3f;
         }
 
+        public static LightType GetLightTypeFromString(string lightText)
+        {
+            if (lightText.ToLower() == "spot")
+            {
+                return LightType.Spot;
+            }
+
+            return LightType.Point;
+        }
+
         /// <summary>
         /// Destroys the object.
         /// </summary>
